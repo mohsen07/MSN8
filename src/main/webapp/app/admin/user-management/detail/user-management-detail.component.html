@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="user">
+      <h2>
+        <span jhiTranslate="userManagement.detail.title">کاربر</span> [<strong>{{ user.login }}</strong
+        >]
+      </h2>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="userManagement.login">ورود</span></dt>
+        <dd>
+          <span>{{ user.login }}</span>
+          <span *ngIf="user.activated" class="badge bg-success" jhiTranslate="userManagement.activated">فعال شده</span>
+          <span *ngIf="!user.activated" class="badge bg-danger" jhiTranslate="userManagement.deactivated">غیر فعال شده</span>
+        </dd>
+
+        <dt><span jhiTranslate="userManagement.firstName">نام</span></dt>
+        <dd>{{ user.firstName }}</dd>
+
+        <dt><span jhiTranslate="userManagement.lastName">نام خانوادگی</span></dt>
+        <dd>{{ user.lastName }}</dd>
+
+        <dt><span jhiTranslate="userManagement.email">رایانامه</span></dt>
+        <dd>{{ user.email }}</dd>
+
+        <dt><span jhiTranslate="userManagement.langKey">زبان</span></dt>
+        <dd>{{ user.langKey }}</dd>
+
+        <dt><span jhiTranslate="userManagement.createdBy">ایجاد شده با</span></dt>
+        <dd>{{ user.createdBy }}</dd>
+
+        <dt><span jhiTranslate="userManagement.createdDate">زمان ایجاد</span></dt>
+        <dd>{{ user.createdDate | date: 'dd/MM/yy HH:mm' }}</dd>
+
+        <dt><span jhiTranslate="userManagement.lastModifiedBy">تغییر کرده با</span></dt>
+        <dd>{{ user.lastModifiedBy }}</dd>
+
+        <dt><span jhiTranslate="userManagement.lastModifiedDate">آخرین زمان تغییر</span></dt>
+        <dd>{{ user.lastModifiedDate | date: 'dd/MM/yy HH:mm' }}</dd>
+
+        <dt><span jhiTranslate="userManagement.profiles">پروفایل ها</span></dt>
+        <dd>
+          <ul class="list-unstyled">
+            <li *ngFor="let authority of user.authorities">
+              <span class="badge bg-info">{{ authority }}</span>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+
+      <button type="submit" routerLink="../../" class="btn btn-info">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">برگشت</span>
+      </button>
+    </div>
+  </div>
+</div>
