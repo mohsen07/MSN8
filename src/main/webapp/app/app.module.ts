@@ -7,7 +7,7 @@ import { TitleStrategy } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import dayjs from 'dayjs/esm';
-import { NgbDateAdapter, NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
+import {NgbDateAdapter, NgbDatepickerConfig, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { ApplicationConfigService } from 'app/core/config/application-config.service';
 import './config/dayjs';
@@ -22,6 +22,11 @@ import MainComponent from './layouts/main/main.component';
 import MainModule from './layouts/main/main.module';
 import { AppPageTitleStrategy } from './app-page-title-strategy';
 import {LayoutModule} from "./metronic/_metronic/layout";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {TranslateModule} from "@ngx-translate/core";
+import {ClipboardModule} from "ngx-clipboard";
+import {InlineSVGModule} from "ng-inline-svg-2";
+import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
 
 @NgModule({
   imports: [
@@ -34,6 +39,23 @@ import {LayoutModule} from "./metronic/_metronic/layout";
     HttpClientModule,
     MainModule,
     TranslationModule,
+
+
+
+
+    BrowserModule,
+    BrowserAnimationsModule,
+    TranslateModule.forRoot(),
+    HttpClientModule,
+    ClipboardModule,
+
+    AppRoutingModule,
+    InlineSVGModule.forRoot(),
+    NgbModule,
+    SweetAlert2Module.forRoot(),
+
+
+
   ],
   providers: [
     Title,
