@@ -16,7 +16,7 @@ import {LayoutComponent} from "./metronic/_metronic/layout/layout.component";
   imports: [
     RouterModule.forRoot(
       [
-        {
+       /* {
           path: '',
           component: HomeComponent,
           title: 'home.title',
@@ -25,7 +25,7 @@ import {LayoutComponent} from "./metronic/_metronic/layout/layout.component";
           path: '',
           component: NavbarComponent,
           outlet: 'navbar',
-        },
+        },*/
         {
           path: '',
           component: LayoutComponent,
