@@ -21,9 +21,11 @@ import { fontAwesomeIcons } from './config/font-awesome-icons';
 import MainComponent from './layouts/main/main.component';
 import MainModule from './layouts/main/main.module';
 import { AppPageTitleStrategy } from './app-page-title-strategy';
+import {LayoutModule} from "./metronic/_metronic/layout";
 
 @NgModule({
   imports: [
+    LayoutModule,
     BrowserModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     AppRoutingModule,
